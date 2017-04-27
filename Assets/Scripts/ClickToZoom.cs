@@ -34,7 +34,9 @@ public class ClickToZoom : MonoBehaviour {
 		bool isTouching = false;
 		#if UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)
 		isTouching = (GvrController.IsTouching || GvrController.ClickButtonDown);
-		#elif UNITY_EDITOR
+		#endif
+
+		#if UNITY_EDITOR
 			isTouching = (Input.GetAxis("Fire1") != 0);
 		#endif
 
