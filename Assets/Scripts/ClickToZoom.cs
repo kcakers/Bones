@@ -14,7 +14,7 @@ public class ClickToZoom : MonoBehaviour {
 	}
 
 	void Update () {
-		if (Input.touchCount > 0 || Input.GetAxis("Fire1") != 0) { // pressing
+		if (IsTouching()) { // pressing
 			// if the were not pressing before...
 			if (!touching) {
 				ButtonClicked();
@@ -27,6 +27,17 @@ public class ClickToZoom : MonoBehaviour {
 			}
 			ZoomOut();
 		}
+	}
+
+	private bool IsTouching() {
+		bool isTouching = false;
+		#if UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)
+			isTouching = GvrController.IsTouching;
+		#elif UNITY_EDITOR
+			isTouching = (Input.GetAxis("Fire1") != 0);
+		#endif
+
+		return isTouching;
 	}
 
 	private void ButtonClicked() {
@@ -52,6 +63,6 @@ public class ClickToZoom : MonoBehaviour {
 		stereoCtrl.stereoMultiplier = stereoMultiplier;
 		stereoCtrl.matchByZoom = zoom;
 		stereoCtrl.matchMonoFOV = fov;
-		stereoCtrl.UpdateStereoValues ();
+		stereoCtrl.keepStereoUpdated = true;
 	}
 }
