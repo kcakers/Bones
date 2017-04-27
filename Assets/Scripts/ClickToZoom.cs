@@ -5,14 +5,12 @@ using Gvr;
 
 public class ClickToZoom : MonoBehaviour {
 
-	public Camera mainCam;
-	private StereoController stereoController;
 	private bool touching = false;
 	private float originalFOV;
 	public float zoomFOV = 20;
 
 	void Start () {
-		originalFOV = mainCam.fieldOfView;
+		originalFOV = Camera.main.fieldOfView;
 	}
 
 	void Update () {
@@ -40,13 +38,13 @@ public class ClickToZoom : MonoBehaviour {
 	}
 
 	private void zoomIn() {
-		mainCam.fieldOfView = Mathf.Lerp (mainCam.fieldOfView, zoomFOV, 7f * Time.deltaTime);
-		FixFieldOfView (1, 1, mainCam.fieldOfView);
+		Camera.main.fieldOfView = Mathf.Lerp (Camera.main.fieldOfView, zoomFOV, 7f * Time.deltaTime);
+		FixFieldOfView (1, 1, Camera.main.fieldOfView);
 	}
 
 	private void zoomOut() {
-		mainCam.fieldOfView = Mathf.Lerp (mainCam.fieldOfView, originalFOV, 7f * Time.deltaTime);
-		FixFieldOfView (1, 1, mainCam.fieldOfView);
+		Camera.main.fieldOfView = Mathf.Lerp (Camera.main.fieldOfView, originalFOV, 7f * Time.deltaTime);
+		FixFieldOfView (1, 1, Camera.main.fieldOfView);
 	}
 
 	private void FixFieldOfView(float stereoMultiplier = 1, float zoom = 0, float fov = 0) {
