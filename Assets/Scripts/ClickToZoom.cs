@@ -14,16 +14,12 @@ public class ClickToZoom : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//stereoController = GetComponent<StereoController>();
-		//stereoController.matchByZoom;
 		originalFOV = mainCam.fieldOfView;
-
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (Input.touchCount > 0 || Input.GetAxis("Fire1") != 0) { // pressing
-			//print("touching");
 			// if the were not pressing before...
 			if (!touching) {
 				buttonClicked();
