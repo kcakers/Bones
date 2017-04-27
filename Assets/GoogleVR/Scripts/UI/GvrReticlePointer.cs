@@ -29,6 +29,7 @@ public class GvrReticlePointer : MonoBehaviour {
 
   void Awake() {
     reticlePointerImpl = new GvrReticlePointerImpl();
+        //reticlePointerImpl.OnPointerClickDown();
   }
 
   void Start() {
