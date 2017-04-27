@@ -37,7 +37,7 @@ public class ClickToZoom : MonoBehaviour {
 		#endif
 
 		#if UNITY_EDITOR
-			isTouching = (Input.GetAxis("Fire1") != 0);
+			isTouching = isTouching || (Input.GetAxis("Fire1") != 0);
 		#endif
 
 		return isTouching;
