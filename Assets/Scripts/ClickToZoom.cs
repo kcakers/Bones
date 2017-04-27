@@ -10,14 +10,11 @@ public class ClickToZoom : MonoBehaviour {
 	private bool touching = false;
 	private float originalFOV;
 	public float zoomFOV = 20;
-	//public GVRViewer viewer;
 
-	// Use this for initialization
 	void Start () {
 		originalFOV = mainCam.fieldOfView;
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		if (Input.touchCount > 0 || Input.GetAxis("Fire1") != 0) { // pressing
 			// if the were not pressing before...
