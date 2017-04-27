@@ -31,16 +31,18 @@ public class ClickToZoom : MonoBehaviour {
 	}
 
 	private bool IsTouching() {
-		bool isTouching = false;
+        if(Input.GetMouseButtonDown(0))
+        {
+            return true;
+        }
+
 		#if UNITY_HAS_GOOGLEVR
-		isTouching = (GvrController.IsTouching || GvrController.ClickButtonDown);
+		return (GvrController.IsTouching || GvrController.ClickButtonDown);
 		#endif
 
 		#if UNITY_EDITOR
-			isTouching = isTouching || (Input.GetAxis("Fire1") != 0);
+			return (Input.GetAxis("Fire1") != 0);
 		#endif
-
-		return isTouching;
 	}
 
 	private void ButtonClicked() {
