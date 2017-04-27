@@ -32,7 +32,7 @@ public class ClickToZoom : MonoBehaviour {
 
 	private bool IsTouching() {
 		bool isTouching = false;
-		#if UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)
+		#if UNITY_HAS_GOOGLEVR
 		isTouching = (GvrController.IsTouching || GvrController.ClickButtonDown);
 		#endif
 
