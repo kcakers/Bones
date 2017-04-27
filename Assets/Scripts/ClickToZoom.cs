@@ -8,13 +8,14 @@ public class ClickToZoom : MonoBehaviour {
 	private bool touching = false;
 	private float originalFOV;
 	public float zoomFOV = 20;
+	public GvrViewer viewer;
 
 	void Start () {
 		originalFOV = Camera.main.fieldOfView;
 	}
 
 	void Update () {
-        if (touching) {
+		if (touching || viewer.Triggered) {
 			ZoomIn();
 		} else {
            ZoomOut();
