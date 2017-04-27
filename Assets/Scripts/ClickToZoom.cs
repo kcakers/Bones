@@ -17,32 +17,32 @@ public class ClickToZoom : MonoBehaviour {
 		if (Input.touchCount > 0 || Input.GetAxis("Fire1") != 0) { // pressing
 			// if the were not pressing before...
 			if (!touching) {
-				buttonClicked();
+				ButtonClicked();
 			} else { // already touching
-				zoomIn();
+				ZoomIn();
 			}
 		} else {
 			if (touching) { // if they were touching...
-				buttonReleased();
+				ButtonReleased();
 			}
-			zoomOut();
+			ZoomOut();
 		}
 	}
 
-	private void buttonClicked() {
+	private void ButtonClicked() {
 		touching = true;
 	}
 
-	private void buttonReleased() {
+	private void ButtonReleased() {
 		touching = false;
 	}
 
-	private void zoomIn() {
+	private void ZoomIn() {
 		Camera.main.fieldOfView = Mathf.Lerp (Camera.main.fieldOfView, zoomFOV, 7f * Time.deltaTime);
 		FixFieldOfView (1, 1, Camera.main.fieldOfView);
 	}
 
-	private void zoomOut() {
+	private void ZoomOut() {
 		Camera.main.fieldOfView = Mathf.Lerp (Camera.main.fieldOfView, originalFOV, 7f * Time.deltaTime);
 		FixFieldOfView (1, 1, Camera.main.fieldOfView);
 	}
