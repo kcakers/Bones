@@ -14,41 +14,22 @@ public class ClickToZoom : MonoBehaviour {
 	}
 
 	void Update () {
-		if (IsTouching()) { // pressing
-			print("isTouching!");
-			// if the were not pressing before...
-			if (!touching) {
-				ButtonClicked();
-			} else { // already touching
-				ZoomIn();
-			}
+        if (touching) {
+			ZoomIn();
 		} else {
-			if (touching) { // if they were touching...
-				ButtonReleased();
-			}
-			ZoomOut();
-		}
+           ZoomOut();
+        }
 	}
 
-	private bool IsTouching() {
-        if(Input.GetMouseButtonDown(0) || Input.touchCount > 0 || (Input.GetAxis("Fire1") != 0))
-        {
-            return true;
-        }
-
-#if UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)
-        return GvrController.ClickButton;
-#endif
-        return false;
+    public void TouchStarted()
+    {
+        touching = true;
     }
 
-	private void ButtonClicked() {
-		touching = true;
-	}
-
-	private void ButtonReleased() {
-		touching = false;
-	}
+    public void TouchEnded()
+    {
+        touching = false;
+    }
 
 	private void ZoomIn() {
 		Camera.main.fieldOfView = Mathf.Lerp (Camera.main.fieldOfView, zoomFOV, 7f * Time.deltaTime);
