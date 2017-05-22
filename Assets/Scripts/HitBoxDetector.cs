@@ -16,7 +16,9 @@ public class HitBoxDetector : MonoBehaviour {
 	void Update () {
 		RaycastHit hit;
 		Ray ray = new Ray (transform.position, transform.forward);
+
 		if (Physics.Raycast (ray, out hit, 20000f)) {
+
 			if (hit.collider.tag == "HitBox") {
 				hit.collider.gameObject.GetComponentInChildren<ShowInner> ().Show ();
 				lastCollider = hit.collider;

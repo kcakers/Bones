@@ -49,18 +49,20 @@ public class ClickToZoom : MonoBehaviour {
 	private void ButtonClicked() {
 		touching = true;
 		isZooming = true;
+        print("button clicked");
 	}
 
 	private void ButtonReleased() {
 		touching = false;
 		isZooming = false;
-	}
+        print("button unclicked");
+    }
 
 	private void ZoomIn() {
-		Camera.main.fieldOfView = Mathf.Lerp (Camera.main.fieldOfView, zoomFOV, zoomSpeed * Time.deltaTime);
+		//Camera.main.fieldOfView = Mathf.Lerp (Camera.main.fieldOfView, zoomFOV, zoomSpeed * Time.deltaTime);
 	}
 
 	private void ZoomOut() {
-		Camera.main.fieldOfView = Mathf.Lerp (Camera.main.fieldOfView, originalFOV, zoomSpeed * Time.deltaTime);
+		//Camera.main.fieldOfView = Mathf.Lerp (Camera.main.fieldOfView, originalFOV, zoomSpeed * Time.deltaTime);
 	}
 }
