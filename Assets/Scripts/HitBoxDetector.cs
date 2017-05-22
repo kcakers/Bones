@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class HitBoxDetector : MonoBehaviour {
 
+	private ClickToZoom zoomer;
 	private Collider lastCollider;
 
 	// Use this for initialization
 	void Start () {
+		zoomer = GetComponent<ClickToZoom> ();
 	}
 	
 	// Update is called once per frame
