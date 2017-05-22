@@ -10,6 +10,9 @@ public class ClickToZoom : MonoBehaviour {
 	public float zoomFOV = 15;
 	public float zoomSpeed = 3.5f;
 
+	[HideInInspector]
+	public bool isZooming = false;
+
 	void Start () {
 		originalFOV = Camera.main.fieldOfView;
 	}
@@ -45,10 +48,12 @@ public class ClickToZoom : MonoBehaviour {
 
 	private void ButtonClicked() {
 		touching = true;
+		isZooming = true;
 	}
 
 	private void ButtonReleased() {
 		touching = false;
+		isZooming = false;
 	}
 
 	private void ZoomIn() {

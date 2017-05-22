@@ -47,6 +47,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\ClickToZoom.cs" />
+     <Compile Include="Assets\Scripts\HitBoxDetector.cs" />
+     <Compile Include="Assets\Scripts\ShowInner.cs" />
+     <None Include="Assets\OutlineEffect\Readme.txt" />
+     <None Include="Assets\OutlineEffect\OutlineEffect\VerticesOutline.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
