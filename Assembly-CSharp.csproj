@@ -46,8 +46,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\ClickListener.cs" />
      <Compile Include="Assets\Scripts\ClickToZoom.cs" />
      <Compile Include="Assets\Scripts\HitBoxDetector.cs" />
+     <Compile Include="Assets\Scripts\Rotate.cs" />
+     <Compile Include="Assets\Scripts\ScaleObject.cs" />
      <Compile Include="Assets\Scripts\ShowInner.cs" />
      <None Include="Assets\OutlineEffect\Readme.txt" />
      <None Include="Assets\OutlineEffect\OutlineEffect\VerticesOutline.shader" />

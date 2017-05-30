@@ -49,13 +49,13 @@ public class ClickToZoom : MonoBehaviour {
 	private void ButtonClicked() {
 		touching = true;
 		isZooming = true;
-        print("button clicked");
+//        print("button clicked");
 	}
 
 	private void ButtonReleased() {
 		touching = false;
 		isZooming = false;
-        print("button unclicked");
+//        print("button unclicked");
     }
 
 	private void ZoomIn() {

@@ -21,7 +21,6 @@ public class Rotate : MonoBehaviour
     void Update()
     {
         float joyDistance = Input.GetAxis("Horizontal1");
-        print("joy1 " + joyDistance);
 
         if (joyDistance != 0)
         {
