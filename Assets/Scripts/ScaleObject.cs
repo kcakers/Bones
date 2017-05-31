@@ -9,8 +9,15 @@ public class ScaleObject : MonoBehaviour {
 	public Vector3 targetScale;
 
 	private bool scaling = false;
+	private Vector3 startScale;
+	private Vector3 scale;
 
-	void Begin() {
+	void Start() {
+		startScale = target.localScale;
+		scale = targetScale;
+	}
+
+	public void Begin() {
 		scaling = true;
 	}
 
@@ -18,9 +25,13 @@ public class ScaleObject : MonoBehaviour {
 		scaling = false;
 	}
 
+	public void Reverse() {
+		scale = startScale;
+	}
+
 	void Update () {
 		if (scaling) {
-			target.localScale = Vector3.Lerp (target.localScale, targetScale, speed * Time.deltaTime);
+			target.localScale = Vector3.Lerp (target.localScale, scale, speed * Time.deltaTime);
 		}
 	}
 }

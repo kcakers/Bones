@@ -46,9 +46,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\ClickListener.cs" />
      <Compile Include="Assets\Scripts\ClickToZoom.cs" />
      <Compile Include="Assets\Scripts\HitBoxDetector.cs" />
+     <Compile Include="Assets\Scripts\InputListener.cs" />
+     <Compile Include="Assets\Scripts\InputToScale.cs" />
      <Compile Include="Assets\Scripts\Rotate.cs" />
      <Compile Include="Assets\Scripts\ScaleObject.cs" />
      <Compile Include="Assets\Scripts\ShowInner.cs" />
