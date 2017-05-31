@@ -11,6 +11,7 @@ public abstract class InputListener : MonoBehaviour {
 	}
 
 	private void TouchControl() {
+        OVRInput.Update();
 		if (IsTouching()) { // pressing
 			// if the were not pressing before...
 			if (!touching) {

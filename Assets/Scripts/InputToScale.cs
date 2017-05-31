@@ -25,21 +25,21 @@ public class InputToScale : InputListener {
 	}
 
 	protected override bool IsTouching () {
-		return Input.GetAxis ("Fire1") != 0;
+        return OVRInput.GetDown(OVRInput.Button.One);
 	}
 
 	protected override void ButtonPressed () {
-//		print ("ButtonClicked");
+        print ("ButtonClicked");
 		scaling = true;
 	}
 
 	protected override void ButtonReleased () {
-//		print ("ButtonReleased");
+        print ("ButtonReleased");
 		scaling = false;
 	}
 
 	protected override void ButtonDown () {
-//		print ("ButtonDown");
+	   print ("ButtonDown");
 	}
 
 	private void ZoomIn() {

@@ -20,7 +20,7 @@ public class Rotate : MonoBehaviour
 
     void Update()
     {
-        float joyDistance = Input.GetAxis("Horizontal1");
+        float joyDistance = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick).x;
 
         if (joyDistance != 0)
         {
